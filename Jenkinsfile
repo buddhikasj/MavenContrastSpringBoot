@@ -8,8 +8,8 @@ pipeline{
       agent any
       steps {
                 echo 'Checkout..'
-
                 checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/Contrast-Security-OSS/vulnerable-spring-boot-application.git']]])
+                sh "ls -lat"
             }
         }
     
