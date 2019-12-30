@@ -8,8 +8,7 @@ pipeline{
       agent any
       steps {
                 echo 'Checkout..'
-                checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/Contrast-Security-OSS/vulnerable-spring-boot-application.git']]])
-                sh "pwd"
+                checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'code']], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/Contrast-Security-OSS/vulnerable-spring-boot-application.git']]])                sh "pwd"
                  sh "ls -lat"
             }
         }
@@ -18,6 +17,7 @@ pipeline{
       agent { docker 'maven:3-alpine' }
       steps {
               sh 'mvn --version'
+              sh 'cd code'
               sh "ls -lat"
               sh 'mvn install'
             }
