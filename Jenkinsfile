@@ -9,7 +9,8 @@ pipeline{
       steps {
                 echo 'Checkout..'
                 checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/Contrast-Security-OSS/vulnerable-spring-boot-application.git']]])
-                sh "ls -lat"
+                sh "pwd"
+                 sh "ls -lat"
             }
         }
     
