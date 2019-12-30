@@ -21,7 +21,7 @@ pipeline{
               sh 'mvn --version'
               sh 'cd code'
               sh "ls -lat"
-              sh 'mvn -f code install'
+              sh 'mvn -f code install -Dmaven.test.skip=true'
             }
         }
   }
