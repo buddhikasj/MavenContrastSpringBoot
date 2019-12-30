@@ -21,7 +21,7 @@ pipeline{
               sh 'mvn --version'
               sh 'cd code'
               sh "ls -lat"
-              sh 'mvn install'
+              sh 'mvn -f code install'
             }
         }
   }
