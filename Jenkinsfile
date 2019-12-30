@@ -4,6 +4,7 @@ pipeline{
     Maven 'Maven'
   }*/
   stages{
+    agent any
     stage('Checkout') {
       steps {
                 echo 'Checkout..'
