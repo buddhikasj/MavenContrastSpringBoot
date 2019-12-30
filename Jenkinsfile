@@ -1,8 +1,7 @@
 pipeline{
   agent any
   tools {
-    maven
-    jdk
+    maven 'Maven 3.3.9'
   }
   stages{
     stage('Checkout') {
