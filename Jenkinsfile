@@ -8,7 +8,7 @@ pipeline{
       agent any
       steps {
                 echo 'Checkout..'
-                sh "mkdir code"
+                sh "mkdir -p code"
                 checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'code']], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/Contrast-Security-OSS/vulnerable-spring-boot-application.git']]])
                 sh "pwd"
                 sh "ls -lat"
