@@ -1,5 +1,5 @@
 pipeline{
-  agent any
+  agent none
   tools {
     Maven 'Maven'
   }
@@ -12,9 +12,11 @@ pipeline{
             }
         }
     
-    stage('Build') {
-            steps {
-                sh 'mvn install'
+    stage('Compile Code') {
+      agent { docker 'maven:3-alpine' }
+      steps {
+              sh 'mvn --version'
+              sh 'mvn install'
             }
         }
   }
