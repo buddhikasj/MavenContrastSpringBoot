@@ -7,7 +7,7 @@ RUN \
   useradd --home-dir /home/springboot --create-home -U springboot
 
 USER springboot
-//RUN cd /home/springboot/; mkdir -p .webgoat-${webgoat_version}
+#RUN cd /home/springboot/; mkdir -p .webgoat-${webgoat_version}
 COPY /code/target/provider-search-0.0.1-SNAPSHOT.jar /home/springboot/springboot.jar
 
 EXPOSE 8080
