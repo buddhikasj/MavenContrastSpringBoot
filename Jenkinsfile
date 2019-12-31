@@ -1,8 +1,8 @@
 pipeline{
   agent none
-/*  tools {
-    Maven 'Maven'
-  }*/
+  environment {
+    registryCredential = 'docker-hub'
+  }
   stages{
     stage('Checkout') {
       agent any
@@ -28,6 +28,23 @@ pipeline{
               sh 'mvn -f code install -Dmaven.test.skip=true'
             }
         }
+      stage('Building Image') {
+         steps{
+            script {
+                  customImage = docker.build("buddhikasj88/contrast-springboot:${env.BUILD_ID}")
+
+            }
+          }
+        }
+       stage('Deploy Image') {
+            steps{
+                script {
+                    docker.withRegistry( '', registryCredential ) {
+                        customImage.push()
+                        customImage.push('latest')
+                    }
+                }
+            }
   }
   
 
