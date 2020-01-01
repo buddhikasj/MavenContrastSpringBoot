@@ -17,7 +17,7 @@ pipeline{
     
     stage('Compile Code') {
       agent { docker {
-                image 'maven:3-alpine'
+                image 'maven:3.6-alpine'
                 args '-v $HOME/.m2:/root/.m2'
                 } 
              }
@@ -25,6 +25,7 @@ pipeline{
               sh 'mvn --version'
               sh 'cd code'
               sh "ls -lat"
+              sh "mvn clean test"
               sh 'mvn -f code install -Dmaven.test.skip=true'
             }
         }
