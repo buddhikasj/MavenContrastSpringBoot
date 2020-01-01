@@ -13,5 +13,5 @@ COPY /code/target/provider-search-0.0.1-SNAPSHOT.jar /home/springboot/springboot
 EXPOSE 8080
 
 WORKDIR /home/springboot
-ENTRYPOINT ["java", "-jar", "/home/webgoat/springboot.jar"]
+ENTRYPOINT ["java", "-jar", "/home/springboot/springboot.jar"]
 CMD ["--server.port=8080", "--server.address=0.0.0.0"]
