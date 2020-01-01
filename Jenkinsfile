@@ -26,7 +26,7 @@ pipeline{
               sh 'cd code'
               sh "ls -lat"
               sh "mvn -f code clean test"
-              sh 'mvn -f code install -Dmaven.test.skip=true'
+              sh 'mvn -f code install" #-Dmaven.test.skip=true'
             }
         }
       stage('Building Image') {
