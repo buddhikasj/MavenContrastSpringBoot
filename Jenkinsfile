@@ -32,8 +32,8 @@ pipeline{
                   -Denv.CONTRAST_MAVEN_USERNAME=kabithas@millenniumitesp.com \
                   -Denv.CONTRAST_MAVEN_ORGUUID=0b86fa1b-36a8-4e0b-b9e1-59004016c595 \
                   -Denv.CONTRAST_MAVEN_TEAMSERVERURL=https://ce.contrastsecurity.com/Contrast/ \
-                  -P run-with-contrast" 
-        // -Dmaven.test.skip=true'
+                  -P run-with-contrast \
+                  -Dmaven.test.skip=true"
             }
         }
       stage('Building Image') {
