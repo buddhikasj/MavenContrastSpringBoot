@@ -31,7 +31,7 @@ pipeline{
                   -DCONTRAST_MAVEN_ORGUUID=1111 \
                   -DCONTRAST_MAVEN_TEAMSERVERURL=https://ce.contrastsecurity.com/Contrast \
                   -DCONTRAST_MAVEN_APIKEY=NjjyC0AnX16zil19l90iwdiI7BUj6U1l \
-                  -DCONTRAST_MAVEN_SERVICEKEY=67WSSFEL0RUZBZKA \" 
+                  -DCONTRAST_MAVEN_SERVICEKEY=67WSSFEL0RUZBZKA " 
         // -Dmaven.test.skip=true'
             }
         }
