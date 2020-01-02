@@ -26,7 +26,7 @@ pipeline{
               sh 'cd code'
               sh "ls -lat"
       //        sh "mvn -f code clean test"
-              sh "mvn -f code install \
+              sh "mvn -X -f code install \
                   -Denv.CONTRAST_MAVEN_APIKEY=NjjyC0AnX16zil19l90iwdiI7BUj6U1l \
                   -Denv.CONTRAST_MAVEN_SERVICEKEY=RUN9U18H9H94U9W0 \
                   -Denv.CONTRAST_MAVEN_USERNAME=kabithas@millenniumitesp.com \
